@@ -1,0 +1,7 @@
+mih_gsb:
+    resource: "@MIHGsbBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

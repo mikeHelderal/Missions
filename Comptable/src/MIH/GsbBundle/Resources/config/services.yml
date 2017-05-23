@@ -1,0 +1,15 @@
+services:
+#    mih_gsb.example:
+#        class: MIH\GsbBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+imports:
+    - { resource: "parameters.yml" }
+services:
+    dbgsbFrais:
+      class: %pdo.class%
+      arguments:
+          - %dbgsbFrais.dsn%
+          - %dbgsbFrais.username%
+          - %dbgsbFrais.password%
+          - %pdo.options%

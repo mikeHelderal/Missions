@@ -1,0 +1,105 @@
+{% extends 'MIHGsbBundle:Default:accueilComptable.html.twig' %}
+{% block title %} {% endblock %}
+{% block contenu %}
+<body>
+   <h3>Frais au Forfait </h3>
+    <table border class="table table-striped" >
+        <thead>
+            <tr>
+                <td>Repas</td>
+                <td>Nuitée</td>
+                <td>Etape</td>
+                <td>KM</td>
+            </tr>
+        </thead>
+        <tbody>{%if actualiser is null %}
+            <tr>
+               {{form_start(form)}}
+                <td>{{ form_widget(form.Repas) }}
+                       
+                   </td>
+
+                    <td> {{form_widget(form.Nuitee)}}
+                    </td>
+
+                    <td>{{form_widget(form.Etape)}}
+                    </td>
+
+                    <td>
+
+                        {{form_widget(form.KM)}}
+                    </td>
+                    <td>
+                       {{form_widget(form.Actualiser)}} 
+                       {{form_end(form)}}
+                    </td>
+            </tr>
+            {%elseif actualiser == 1 %} les informations ont été actualisées
+                <tr>
+                    <td>{{REP.quantite}} </td>
+                    <td>{{NUI.quantite}} </td>
+                    <td> {{ETP.quantite}}</td>
+                    <td>{{KM.quantite}} </td>
+                </tr>{%endif%}
+        </tbody>
+    </table>
+   
+        
+       <h3>Frais hors Forfait </h3>
+    <table border class="table table-striped" >
+        <thead>
+            <tr>
+                <td>date</td>
+                <td>libelle</td>
+                <td>Montan</td>
+                <td>Situation</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+                {% for uneFiche in fraishorsforfait %}
+                   <tr>                  
+                    <td>{{uneFiche.datedepense | date('d/m/Y')}}</td>
+                    <td>{{uneFiche.libelle  }}</td>
+                    <td>{{uneFiche.montant}}</td>
+                    <td>{{uneFiche.idfichefrais.idetat.libelle}}</td>
+                    <td><a href="{{path('mih_gsb_reffuser_frais_hors_forfait',{'mois': uneFiche.idfichefrais.mois, 'visiteur': uneFiche.idfichefrais.idvisiteur.idvisiteur, 'idFraisHorsForfait': uneFiche.idlignefraishorsforfait})}}"><button type="button" class="btn btn-success" >supprimer</button></a></td>
+
+                    
+                   </tr>
+
+                    {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+            
+             <h3>Hors classification </h3>
+    <table border class="table table-striped" >
+        <thead>
+            <tr>
+                <td>nb Justificatifs</td>
+                <td>Montant</td>
+                <td>Situation</td>
+                <td>date opération</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {{fichefrais.montantvalide}}
+                
+                   <tr>                  
+                    <td>{{fichefrais.nbjustificatifs}}</td>
+                    <td>{{fichefrais.montantvalide  }}</td>
+                    <td>{{fichefrais.idetat.libelle}}</td>
+                    <td>{{fichefrais.datemodif | date('d/m/Y')}}</td>
+                    
+                   </tr>
+
+                   
+            
+        </tbody>
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,12 @@
+## YAML Template.
+---
+
+parameters:
+    pdo.class: PDO
+    pdo.attr_errmode: 3
+    pdo.erromode_exception: 2
+    pdo.options:
+        %pdo.attr_errmode%: %pdo.erromode_exception%
+    dbgsbFrais.dsn: mysql:host=localhost;dbname=gsbFrais
+    dbgsbFrais.username: root
+    dbgsbFrais.password: azerty

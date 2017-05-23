@@ -1,0 +1,27 @@
+mih_gsb_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MIHGsbBundle:Default:index }
+
+mih_gsb_listeVisiteur:
+    path:     /visiteur
+    defaults: { _controller: MIHGsbBundle:Default:afficherVisiteur }
+
+mih_gsb_connexion:
+    path:    /connexion
+    defaults: { _controller: MIHGsbBundle:Default:connexionComptable }
+   
+mih_gsb_accueil_comptable:
+    path:   /accueilComptable/{nom}/{prenom}
+    defaults: { _controller: MIHGsbBundle:Default:accueilComptable }
+    
+mih_gsb_choix:
+    path:   /choix
+    defaults: { _controller: MIHGsbBundle:Default:choixFicheFrais }
+    
+mih_gsb_affichage_fiche:
+    path: /fichefrais/{idVisiteur}/{mois}
+    defaults: { _controller: MIHGsbBundle:Default:afficherFicheFrais }
+    
+mih_gsb_reffuser_frais_hors_forfait:
+    path: /fichefrais/{mois}/{visiteur}/{idFraisHorsForfait}
+    defaults: { _controller: MIHGsbBundle:Default:refuserFraisHorsForfait }
