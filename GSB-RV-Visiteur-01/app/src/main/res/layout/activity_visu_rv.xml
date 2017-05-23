@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="fr.gsb.rv.VisuRvActivity">
+
+
+    <TextView
+        android:id="@+id/numeroRap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="numero : "
+        />
+
+    <TextView
+        android:id="@+id/bilanRap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bilan : "
+        />
+
+    <TextView
+        android:id="@+id/coefConfiance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coefConfiance : "
+        />
+
+    <TextView
+        android:id="@+id/dateVisite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date de visite : "
+        />
+
+    <TextView
+        android:id="@+id/dateRedac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date de redaction : "
+        />
+
+    <TextView
+        android:id="@+id/lu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lu  : "
+        />
+
+    <TextView
+        android:id="@+id/nomPract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nom du practicien : "
+        />
+
+    <TextView
+        android:id="@+id/motif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="motif : "
+        />
+    <Button
+        android:id="@+id/bEchantillonOffert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ECHANTILLONS OFFERT "
+        android:onClick="getListeEchantillons"/>
+
+
+
+
+</LinearLayout>
